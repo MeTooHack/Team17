@@ -4,18 +4,16 @@
   "name": "NoBias",
   "version": "0.1.0",
   "description": "Removes your biases when finding people to recruit!",
+  "icons": { "128": "icon_128.png" },
 
-  "background": {
-    "scripts": ["background.js"]
+  "browser_action":{
+    "default_title": "NoBias",
+    "default_icon": "icon_19.png"
   },
  
   "content_scripts": [{
-    "js": ["content.js"],
-    "matches": ["https://www.linkedin.com/*"]
-  }],
-
-  "permissions": [
-    "tabs"
-  ]
+    "css": ["css/linkedin.css"],
+    "matches": ["https://www.linkedin.com/search/*"]
+  }]
  
 }

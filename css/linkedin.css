@@ -1,0 +1,55 @@
+.search-result--person .search-result__image img {
+	display: none;
+}
+
+.search-result--person .search-result__image {
+	background-image: url("https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif") !important;
+	background-size: 100%;
+}
+
+.search-result--person .actor-name {
+	visibility: hidden;
+	position: relative;
+}
+
+.search-result--person .actor-name:after {
+	visibility: visible;
+	position: absolute;
+	top: 0;
+	left: 0;
+	content:'A cat!';
+}
+
+.actor-name-with-distance .distance-badge {
+    position: absolute;
+    left: 46px;
+    width: 50px;
+    top: 3px;
+}
+
+h1.pv-top-card-section__name {
+	text-indent:-9999px;
+}
+
+h1.pv-top-card-section__name:after {
+	text-indent: 15px;
+	content:'A cat!';
+	float:left;
+}
+
+.presence-entity__image {
+	background-image: url("https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif") !important;
+}
+
+.pv-contact-info__card-sub-heading {
+	visibility: hidden;
+	position: relative;
+}
+
+.pv-contact-info__card-sub-heading:after {
+	visibility: visible;
+	position: absolute;
+	top: 0;
+	left: 0;
+	content:"This cat's Profile and Website";
+}
