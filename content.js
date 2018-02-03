@@ -1,7 +1,5 @@
-var last_known_scroll_position = 0;
 var names;
 var images;
-var path = window.location.pathname;
 
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 	sendResponse("Recieved message");
@@ -14,16 +12,9 @@ function updatedUrl(path) {
 	if (path.includes("search")) {
 		removeSearchBias();
 
-		window.addEventListener('scroll', function(e) {
-
-		  	last_known_scroll_position = window.scrollY;
-
-			if (last_known_scroll_position % 100 < 10) {
-			  removeSearchBias();
-			  ticking = false;
-			}
-		});
+		window.addEventListener('scroll', scrollListener,true);
 	} else if (path.includes("in/")) {
+		window.removeEventListener('scroll',scrollListener,true)
 		removeProfileBias();
 	}
 }
@@ -51,7 +42,13 @@ function removeProfileBias() {
 
 }
 
+var scrollListener = function (e) {
 
+	if (window.scrollY % 100 < 10) {
+	  removeSearchBias();
+	}
+		
+}
 
 var getLocation = function(href) {
     var l = document.createElement("a");
