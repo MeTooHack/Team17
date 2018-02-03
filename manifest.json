@@ -4,6 +4,10 @@
   "name": "Modify CSS and HTML",
   "version": "0.1.0",
   "description": "Lateral blog post demo extension",
+
+  "background": {
+    "scripts": ["background.js"]
+  },
  
   "content_scripts": [{
     "js": ["content.js"],

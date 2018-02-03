@@ -3,7 +3,14 @@ var names;
 var images;
 var path = window.location.pathname;
 
-function updatedUrl() {
+chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
+	sendResponse("Recieved message");
+	console.log("Got message: " + request.url);
+   
+    //updatedUrl(url.path);
+});
+
+function updatedUrl(url) {
 
 	if (path.includes("search")) {
 		removeSearchBias();
