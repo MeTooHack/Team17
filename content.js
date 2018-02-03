@@ -5,16 +5,14 @@ var path = window.location.pathname;
 
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 	sendResponse("Recieved message");
-	console.log("Got message: " + request.url);
-   	var uri = getLocation(request.url);
-    updatedUrl(uri.pathname);
+	var uri = getLocation(request.url);
+	updatedUrl(uri.pathname); 	
 });
 
 function updatedUrl(path) {
 
 	if (path.includes("search")) {
-		console.log("Run search stuff")
-		/*removeSearchBias();
+		removeSearchBias();
 
 		window.addEventListener('scroll', function(e) {
 
@@ -24,9 +22,9 @@ function updatedUrl(path) {
 			  removeSearchBias();
 			  ticking = false;
 			}
-		});*/
+		});
 	} else if (path.includes("in/")) {
-		console.log("Run profile stuff");
+		removeProfileBias();
 	}
 }
 
@@ -44,11 +42,19 @@ function removeSearchBias() {
 
 }
 
+function removeProfileBias() {
+	var image = document.getElementsByClassName("presence-entity__image")[0];
+	var name = document.getElementsByClassName("pv-top-card-section__name")[0];
+
+	image.style.backgroundImage = 'url(https://media.giphy.com/media/11s7Ke7jcNxCHS/giphy.gif)';
+	name.innerHTML = "A Person";
+
+}
+
+
+
 var getLocation = function(href) {
     var l = document.createElement("a");
     l.href = href;
     return l;
 };
-
-
-updatedUrl();

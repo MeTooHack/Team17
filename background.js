@@ -8,10 +8,13 @@ chrome.tabs.onCreated.addListener(function(tab) {
         	url = changeInfo.url;	        	
         } 
         if (changeInfo.status === "complete") {
-        	console.log("completed, Send url: " + url);
-        	chrome.tabs.sendMessage(tabId, {url: url}, function(response) {
-		      console.log("Got response: " + response);
-		    });
+        	if (url.includes("linkedin")) {
+        		console.log("completed, Send url: " + url);
+        		chrome.tabs.sendMessage(tabId, {url: url}, function(response) {
+			      console.log("Got response: " + response);
+			    });
+        	}
+        	
         }
 
     });
