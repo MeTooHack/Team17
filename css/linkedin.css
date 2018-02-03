@@ -1,55 +1,59 @@
-.search-result--person .search-result__image img {
-	display: none;
+.search-result--person .search-result__image img,
+.presence-entity__image {
+	display: none !important;
 }
 
-.search-result--person .search-result__image {
+.pv-top-card-section__image,
+.presence-entity{
+	background-image: url(https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif) !important;
+    border-radius: 100%;
+    background-size: 100%;
+}
+
+.search-result--person .search-result__image{
 	background-image: url("https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif") !important;
-	background-size: 100%;
+	background-size: 100% !important;
 }
 
 .search-result--person .actor-name {
-	visibility: hidden;
-	position: relative;
+	visibility: hidden !important;
+	position: relative !important;
 }
 
 .search-result--person .actor-name:after {
-	visibility: visible;
-	position: absolute;
-	top: 0;
-	left: 0;
-	content:'A cat!';
+	visibility: visible !important;
+	position: absolute !important;
+	top: 0 !important;
+	left: 0 !important;
+	content:'A cat!' !important;
 }
 
 .actor-name-with-distance .distance-badge {
-    position: absolute;
-    left: 46px;
-    width: 50px;
-    top: 3px;
+    position: absolute !important;
+    left: 46px !important;
+    width: 50px !important;
+    top: 3px !important;
 }
 
 h1.pv-top-card-section__name {
-	text-indent:-9999px;
+	text-indent:-9999px !important;
 }
 
 h1.pv-top-card-section__name:after {
-	text-indent: 15px;
-	content:'A cat!';
-	float:left;
-}
-
-.presence-entity__image {
-	background-image: url("https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif") !important;
+	text-indent: 15px !important;
+	content:'A cat!' !important;
+	float:left !important;
 }
 
 .pv-contact-info__card-sub-heading {
-	visibility: hidden;
-	position: relative;
+	visibility: hidden !important;
+	position: relative !important;
 }
 
 .pv-contact-info__card-sub-heading:after {
-	visibility: visible;
-	position: absolute;
-	top: 0;
-	left: 0;
-	content:"This cat's Profile and Website";
+	visibility: visible !important;
+	position: absolute !important;
+	top: 0 !important;
+	left: 0 !important;
+	content:"This cat's Profile and Website" !important;
 }
