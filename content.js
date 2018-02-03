@@ -6,14 +6,15 @@ var path = window.location.pathname;
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 	sendResponse("Recieved message");
 	console.log("Got message: " + request.url);
-   
-    //updatedUrl(url.path);
+   	var uri = getLocation(request.url);
+    updatedUrl(uri.pathname);
 });
 
-function updatedUrl(url) {
+function updatedUrl(path) {
 
 	if (path.includes("search")) {
-		removeSearchBias();
+		console.log("Run search stuff")
+		/*removeSearchBias();
 
 		window.addEventListener('scroll', function(e) {
 
@@ -23,9 +24,7 @@ function updatedUrl(url) {
 			  removeSearchBias();
 			  ticking = false;
 			}
-
-		  
-		});
+		});*/
 	} else if (path.includes("in/")) {
 		console.log("Run profile stuff");
 	}
@@ -44,5 +43,12 @@ function removeSearchBias() {
 	}
 
 }
+
+var getLocation = function(href) {
+    var l = document.createElement("a");
+    l.href = href;
+    return l;
+};
+
 
 updatedUrl();
