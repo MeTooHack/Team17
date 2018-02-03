@@ -10,17 +10,22 @@
     background-size: 100%;
 }
 
-.search-result--person .search-result__image{
+.search-result--person .search-result__image
+ {
 	background-image: url("https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif") !important;
 	background-size: 100% !important;
 }
 
-.search-result--person .actor-name {
+.pv-browsemap-section__member-image {
+	display: none !important;
+}
+
+.actor-name {
 	visibility: hidden !important;
 	position: relative !important;
 }
 
-.search-result--person .actor-name:after {
+.actor-name:after {
 	visibility: visible !important;
 	position: absolute !important;
 	top: 0 !important;
@@ -28,7 +33,7 @@
 	content:'A cat!' !important;
 }
 
-.actor-name-with-distance .distance-badge {
+.distance-badge {
     position: absolute !important;
     left: 46px !important;
     width: 50px !important;
